@@ -13,3 +13,8 @@ go [a] = a
 go xs = go (pairs xs)
 pairs (a:b:t) = merge a b : pairs t
 pairs t = t
+
+bubbleSort uList = foldr swapTill [] uList
+
+swapTill x [] = [x]
+swapTill x (y:xs) = min x y : swapTill (max x y) xs
